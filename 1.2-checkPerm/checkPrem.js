@@ -12,17 +12,30 @@ hints: {
 
 */
 
-let strOne = "onr"
+let strOne = "onronr"
 let strTwo = "tqo"
 
 function checkPerm (strOne, strTwo){
 
     let permutation = false
+    const cacheOne = {}
+    const cacheTwo = {}
+    const arrOne = strOne.split("")
+    const arrTwo= strTwo.split("")
 
-
+    for (let char of arrOne){
+        if(cacheOne[char]) {
+            cacheOne[char] = cacheOne[char] + 1
+        } else {
+            cacheOne[char] = 1
+        }
+    }
 
     return permutation
 }
+
+
+checkPerm(strOne, strTwo)
 
 /*
 turn str => arrs
