@@ -11,3 +11,22 @@ hints: {
 }
 
 */
+
+let strOne = "onr"
+let strTwo = "tqo"
+
+function checkPerm (strOne, strTwo){
+
+    let permutation = false
+
+
+
+    return permutation
+}
+
+/*
+turn str => arrs
+make two hash tables to record the number of times a char appears
+compare the values of the keys in each cache
+
+*/
