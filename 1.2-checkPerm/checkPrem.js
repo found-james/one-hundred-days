@@ -12,9 +12,6 @@ hints: {
 
 */
 
-let strOne = "onronr"
-let strTwo = "tqo"
-
 function checkPerm (strOne, strTwo){
 
     let permutation = false
@@ -41,13 +38,24 @@ function checkPerm (strOne, strTwo){
         }
     }
 
-    console.log(cacheOne, cacheTwo)
+    const keys1 = Object.keys(cacheOne)
+    const keys2 = Object.keys(cacheTwo)
 
-    return permutation
+    if (keys1.length !== keys2.length) return permutation
+    
+    for (let key of keys1) {
+
+        if (cacheOne[key] !== cacheTwo[key]) return permutation
+    
+    }
+
+    return permutation = true
 }
 
 
-checkPerm(strOne, strTwo)
+console.log(checkPerm("one", "two"))
+console.log(checkPerm("racecar", "raccear"))
+
 
 /*
 turn str => arrs
