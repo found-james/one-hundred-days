@@ -12,3 +12,34 @@ hints: {
 }
 */
 
+/*
+any string that is a palindrome has a midpoint 
+to left of midpoint there is the same character count
+as to the right of midpoint
+
+futhermore, 
+the characters on the LHS are identical to the RHS
+the poistions of the identiical characters are equidistant from 
+midpoint
+
+midpoint is kinda of a problem...
+
+plan
+--
+if string.length is odd, then must have a way to identify midpoint for any arbitrary length 
+
+if string.length is even, then ALL chars must appear the same number of times
+--
+
+if string.length is odd & midpoint is properly identified. 
+to qualify as a palindrome all to guarantee a palindrome is to confirm existence of the necessary chars
+
+if string.length is even & all chars appear the same number of time. done.
+case: all chars DO NOT appear the same number of time
+
+question: is it possible to have a palindrome if there are two distinct unique chars in a string?
+
+
+
+
+*/
