@@ -20,6 +20,8 @@ function checkPerm (strOne, strTwo){
     let permutation = false
     const cacheOne = {}
     const cacheTwo = {}
+
+
     const arrOne = strOne.split("")
     const arrTwo= strTwo.split("")
 
@@ -30,6 +32,16 @@ function checkPerm (strOne, strTwo){
             cacheOne[char] = 1
         }
     }
+
+    for (let char of arrTwo){
+        if(cacheTwo[char]) {
+            cacheTwo[char] = cacheTwo[char] + 1
+        } else {
+            cacheTwo[char] = 1
+        }
+    }
+
+    console.log(cacheOne, cacheTwo)
 
     return permutation
 }
