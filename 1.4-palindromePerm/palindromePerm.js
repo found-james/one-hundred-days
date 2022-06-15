@@ -15,9 +15,7 @@ hints: {
 function palindromePerm (str){
 
     const cache ={}
-    const arr = str.split("").filter(x => { if(x != " ") return x})
-
-    console.log (arr)
+    const arr = str.split("").filter(x => { if(x != " ") return x })
 
     for (let char of arr){
         if(cache[char]) {
@@ -29,9 +27,6 @@ function palindromePerm (str){
     
     let numberOfKeys = Object.keys(cache).length
     let count = 0
-
-    console.log(numberOfKeys)
-
 
     for (let key in cache){
         cache[key] % 2 === 0 ? count++ : null
@@ -57,7 +52,6 @@ midpoint is kinda of a problem...
 plan
 --
 if string.length is odd, then must have a way to identify midpoint for any arbitrary length 
-
 if string.length is even, then ALL chars must appear the same number of times
 --
 
