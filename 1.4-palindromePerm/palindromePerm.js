@@ -12,6 +12,36 @@ hints: {
 }
 */
 
+function palindromePerm (str){
+
+    const cache ={}
+    const arr = str.split("").filter(x => { if(x != " ") return x})
+
+    console.log (arr)
+
+    for (let char of arr){
+        if(cache[char]) {
+            cache[char] = cache[char] + 1
+        } else {
+            cache[char] = 1
+        }
+    }
+    
+    let numberOfKeys = Object.keys(cache).length
+    let count = 0
+
+    console.log(numberOfKeys)
+
+
+    for (let key in cache){
+        cache[key] % 2 === 0 ? count++ : null
+    }
+
+    return numberOfKeys !== count ? false : true
+
+}
+
+console.log(palindromePerm("hello you"))
 /*
 any string that is a palindrome has a midpoint 
 to left of midpoint there is the same character count
@@ -38,8 +68,4 @@ if string.length is even & all chars appear the same number of time. done.
 case: all chars DO NOT appear the same number of time
 
 question: is it possible to have a palindrome if there are two distinct unique chars in a string?
-
-
-
-
 */
