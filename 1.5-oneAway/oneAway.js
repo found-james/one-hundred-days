@@ -12,22 +12,26 @@ hints: {
 function oneAway (strA, strB){
 
     if (typeof strA && typeof strB !== "string" ) throw new Error ("strings only")
+    if (Math.abs(strA.length - strB.length) > 1) throw new Error ("theres no way only one edit can give you matching strings. Think about it")
+
     // case: strings are same length
 
-    if (strA.length === strB.length) {
-        let matches = 0
-        
-        for (let i = 0; i < strA.length; i++){
-            if (strA.charAt(i) === strB.charAt(i)) matches++
+        if (strA.length === strB.length) {
+            let matches = 0
+
+            for (let i = 0; i < strA.length; i++){
+                if (strA.charAt(i) === strB.charAt(i)) matches++
+            }
+          
+            return matches === strA.length - 1 || matches === strA.length ? true : false
         }
-        
-        return matches === strA.length - 1 || matches === strA.length ? true : false
-    }
 
 
-    // case: strings are not same length
+    /* case: strings are not same length but you can use remove action */
+
     let strOne
     let strTwo
+    let matches = 0
 
     if (strA.length <= strB.length){
         strTwo = strA
@@ -36,10 +40,18 @@ function oneAway (strA, strB){
         strTwo = strB
         strOne = strA
     }
+    
+    for (let i = 0; i < strTwo.length; i++){
+        if (strTwo.charAt(i) === strOne.charAt(i)) matches++
+    }
 
+    return matches === strTwo.length ? true : false
 }
 
-console.log(oneAway("hello", "hpllo"))
+    /* case: strings are not same length but with the insertion of a char anywhere the strings will match
+    hint: use a hash table to count the chars and compare count to matches on line 34 */
+
+console.log(oneAway("hello", "hellopg"))
 /*
 
 
