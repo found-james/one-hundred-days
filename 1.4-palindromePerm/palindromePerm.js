@@ -18,11 +18,7 @@ function palindromePerm (str){
     const arr = str.split("").filter(x => { if(x != " ") return x })
 
     for (let char of arr){
-        if(cache[char]) {
-            cache[char] = cache[char] + 1
-        } else {
-            cache[char] = 1
-        }
+        cache[char] ? cache[char] = cache[char] + 1 : cache[char] = 1
     }
     
     let numberOfKeys = Object.keys(cache).length
@@ -33,9 +29,9 @@ function palindromePerm (str){
         cache[key] % 2 === 0 ? evenKeysCount++ : oddKeysCount++
     }
 
-    return str.length % 2 === 0 ? numberOfKeys === count 
+    return str.length % 2 === 0 ? numberOfKeys === evenKeysCount 
             : oddKeysCount % 2 !== 0 ? true : false
 
 }
 
-console.log(palindromePerm("racecar"))
+console.log(palindromePerm("raceecar"))
