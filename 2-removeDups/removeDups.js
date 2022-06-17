@@ -18,7 +18,7 @@ class LinkedList {
     }
 
     append(value){
-        let node = new Node(value)
+        let node = new ListNode(value)
 
         if (this.head){
             this.tail.next = node
@@ -29,3 +29,13 @@ class LinkedList {
         }
     }
 }
+
+let list = new LinkedList();
+console.log(list)
+
+for (let elem of [1, 5, 1, 6, 8, 6, 8, 8, 8, 8]) {
+  console.log(list, ' @ iteration')
+  list.append(elem);
+}
+
+console.log(list)
