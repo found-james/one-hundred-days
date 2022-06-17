@@ -39,3 +39,8 @@ for (let elem of [1, 5, 1, 6, 8, 6, 8, 8, 8, 8]) {
 }
 
 console.log(list)
+
+/* 
+seems like reduce method would be something to try to implement
+linkedList is a sequence of nested objects
+*/
