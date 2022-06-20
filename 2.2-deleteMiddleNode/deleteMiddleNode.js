@@ -21,15 +21,36 @@ class linkedList {
         let node = new listNode(data)
 
         if (this.head){
-            this.head.next = node
+            this.tail.next = node
             this.tail = node
         } else {
             this.head = node
             this.tail = node
         }
+    }
 
+    size(){
+        let size = 0
+        let node = this.head
+
+        while (node){
+            node = node.next
+            size++
+        }
+
+        return size
     }
 }
+
+
+let list = new linkedList()
+
+for (let data of ["a", "b", "c", "d", "e"]){
+    list.append(data)
+}
+
+console.log(list)
+console.log(list.size())
 /*
 
 what does it mean to have access only to that node?
