@@ -60,12 +60,13 @@ function sumOfLinkedLists (listOne, listTwo){
         secondNum.push(pointer.value)
         pointer = pointer.next
     }
-
-    console.log(firstNum)
-    console.log(secondNum)
     // add numbers => integer
-
+    let addend = parseInt(firstNum.reverse().join("")) 
+    let otherAddend = parseInt(secondNum.reverse().join(""))
+    let sum = addend + otherAddend
+    
     // take integer .split, .reverse
+    
     // init linkedList
     // loop over arr and use append method to create linkedlist
 }
