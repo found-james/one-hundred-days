@@ -43,16 +43,16 @@ class linkedList {
     remove(node){
 
         let search = this.head
+        let prev = this.head
+
 
         while (node != search.data){
+            prev = search
             search = search.next
         }
-        let searchNext = search.next
-    
-        console.log(search)
-        console.log("~~~~~~~~")
-        console.log(searchNext)
 
+        let searchNext = search.next
+        prev.next = searchNext
     }
 }
 
@@ -62,7 +62,9 @@ for (let data of ["a", "b", "c", "d", "e"]){
     list.append(data)
 }
 
+console.log(list.size())
 list.remove("c")
+console.log(list.size())
 
 
 /* remove middle node c */
@@ -72,13 +74,8 @@ list.remove("c")
 
 what does it mean to have access only to that node?
 
-current remove method will 
--assign search to the node we are given
--once found it will assign the .next value to var searchNext
-
-need to 
-- find a way to keep track of previous nodes 
-- this way I can link the .next to the previous node before the one to be removed
+Incomplete solution 
+must deal with cae where head or tail is the node to be removed
 
 
 */
