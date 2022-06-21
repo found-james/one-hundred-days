@@ -44,12 +44,25 @@ for (let num of [5, 9, 2]){
 }
 
 function sumOfLinkedLists (listOne, listTwo){
-
-    console.log(listOne)
-    console.log("~~~~~~~")
-    console.log(listTwo)
-    console.log("~~~~~~~")
     // turn lists into number
+    let pointer = listOne.head
+    const firstNum = []
+    const secondNum =[]
+
+    while (pointer) {
+        firstNum.push(pointer.value)
+        pointer = pointer.next
+    }
+
+    pointer = listTwo.head
+
+    while (pointer) {
+        secondNum.push(pointer.value)
+        pointer = pointer.next
+    }
+
+    console.log(firstNum)
+    console.log(secondNum)
     // add numbers => integer
 
     // take integer .split, .reverse
