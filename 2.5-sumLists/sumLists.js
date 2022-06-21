@@ -44,10 +44,9 @@ for (let num of [5, 9, 2]){
 }
 
 function sumOfLinkedLists (listOne, listTwo){
-    // turn lists into number
+
     let pointer = listOne.head
     const firstNum = []
-    const secondNum =[]
 
     while (pointer) {
         firstNum.push(pointer.value)
@@ -55,20 +54,30 @@ function sumOfLinkedLists (listOne, listTwo){
     }
 
     pointer = listTwo.head
+    const secondNum =[]
 
     while (pointer) {
         secondNum.push(pointer.value)
         pointer = pointer.next
     }
-    // add numbers => integer
+
     let addend = parseInt(firstNum.reverse().join("")) 
     let otherAddend = parseInt(secondNum.reverse().join(""))
     let sum = addend + otherAddend
+    const sumArr = sum.toString().split("").reverse()
+    const sumReturn = new linkedList()
     
-    // take integer .split, .reverse
+    for (let digit of sumArr){
+        sumReturn.append(digit)
+    }
     
-    // init linkedList
-    // loop over arr and use append method to create linkedlist
+    return console.log(sumReturn)
 }
 
 sumOfLinkedLists(listOne, listTwo)
+
+    // turn lists into number
+    // add numbers => integer
+    // take integer .split, .reverse
+    // init linkedList
+    // loop over arr and use append method to create linkedlist
