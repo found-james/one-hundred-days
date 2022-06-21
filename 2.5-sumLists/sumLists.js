@@ -7,15 +7,12 @@ The digits of the number are stored in reverse order (head contains the ones)
 Wrtie function that adds the two numbbers and returns the sum as a linkedList
 
 */
-
-
 class listNode {
     constructor(value){
         this.value = value
         this.next = null
     }
 }
-
 class linkedList {
     constructor (){
         this.head = null
@@ -31,6 +28,14 @@ class linkedList {
             this.tail = node
         }
     }
-
 }
 
+function sumOfLinkedLists (listOne, listTwo){
+
+    // turn lists into number
+    // add numbers => integer
+
+    // take integer .split, .reverse
+    // init linkedList
+    // loop over arr and use append method to create linkedlist
+}
