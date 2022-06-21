@@ -19,7 +19,8 @@ class linkedList {
         this.tail = null
     }
 
-    append (node){
+    append (value){
+        let node = new listNode(value)
         if (this.head){
             this.tail.next = node
             this.tail = node
@@ -30,8 +31,24 @@ class linkedList {
     }
 }
 
+const listOne = new linkedList()
+
+for (let num of [7, 1, 6]){
+    listOne.append(num)
+}
+
+const listTwo = new linkedList()
+
+for (let num of [5, 9, 2]){
+    listTwo.append(num)
+}
+
 function sumOfLinkedLists (listOne, listTwo){
 
+    console.log(listOne)
+    console.log("~~~~~~~")
+    console.log(listTwo)
+    console.log("~~~~~~~")
     // turn lists into number
     // add numbers => integer
 
@@ -39,3 +56,5 @@ function sumOfLinkedLists (listOne, listTwo){
     // init linkedList
     // loop over arr and use append method to create linkedlist
 }
+
+sumOfLinkedLists(listOne, listTwo)
