@@ -27,11 +27,12 @@ class linkedList {
 
     removeHead(){
         
-        if (this.head.next) {
+        if (this.head && this.head.next) {
             this.head = this.head.next
+            return console.log(this)
         }
 
-        return console.log(this)
+        throw new Error ("where is the head of this list?")
     }
 }
 
@@ -67,11 +68,11 @@ class QueueAlso {
     }
 
     enqueue(value){
-
+        this._list.append(value)
     }
 }
 
-let q = new Queue()
+let q = new QueueAlso()
 
 for (let i = 1; i < 8; i++) q.enqueue(i) 
 console.log(q)
