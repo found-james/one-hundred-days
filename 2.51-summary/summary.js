@@ -24,11 +24,21 @@ class linkedList {
         while (pointer) { pointer = pointer.next; size++ }
         return size
     }
+
+    removeHead(){
+        
+        if (this.head.next) {
+            this.head = this.head.next
+        }
+
+        return console.log(this)
+    }
 }
 
 let list = new linkedList()
 for (let value of ["a", "b", "c", "d", "e"]) list.append(value)
 
+list.removeHead()
 // console.log(list.size())
 
 /* 
@@ -49,6 +59,16 @@ class Queue {
         return element
     }
 
+}
+
+class QueueAlso {
+    constructor () {
+        this._list = new linkedList()
+    }
+
+    enqueue(value){
+
+    }
 }
 
 let q = new Queue()
