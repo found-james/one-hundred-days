@@ -10,9 +10,9 @@ class Stack {
         this.list = []
     }
 
-    push (element) { this.list.push(element) }
+    add (element) { this.list.push(element) }
 
-    pop () { return this.push.pop() }
+    remove () { return this.push.pop() }
 
     size () { return this.list.length }
 
