@@ -12,7 +12,7 @@ class Stack {
 
     add (element) { this.list.push(element) }
 
-    remove () { return this.push.pop() }
+    remove () { return this.list.pop() }
 
     size () { return this.list.length }
 
@@ -20,20 +20,20 @@ class Stack {
 
 const firstStack = new Stack ()
 for (let elem of ["a", "b", "c"]) firstStack.add(elem)
-console.log(firstStack)
 
 class StackAlso {
-    #items = []
-    add = (elem) => this.#items.push(elem)
-    remove = () => this.#items.pop()
-    size = () => this.#items.length
+    items = []
+    add = (elem) => this.items.push(elem)
+    remove = () => this.items.pop()
+    size = () => this.items.length
 
 }
 
 const secondStack = new StackAlso ()
 for (let elem of ["a", "b", "c"]) secondStack.add(elem)
 
-console.log(secondStack.size())
+secondStack.items.push("e")
+console.log(secondStack.items)
 
 
 // console.log(secondStack.items.pop())
