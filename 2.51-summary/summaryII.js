@@ -19,6 +19,21 @@ class Stack {
 }
 
 const firstStack = new Stack ()
-for (let elem of ["a", "b", "c"]) firstStack.push(elem)
-
+for (let elem of ["a", "b", "c"]) firstStack.add(elem)
 console.log(firstStack)
+
+class StackAlso {
+    #items = []
+    add = (elem) => this.#items.push(elem)
+    remove = () => this.#items.pop()
+    size = () => this.#items.length
+
+}
+
+const secondStack = new StackAlso ()
+for (let elem of ["a", "b", "c"]) secondStack.add(elem)
+
+console.log(secondStack.size())
+
+
+// console.log(secondStack.items.pop())
