@@ -1,4 +1,4 @@
-class NodeGraph {
+class Node {
     constructor (value){
         this.value = value
         this.adjacents = []
@@ -17,4 +17,38 @@ class NodeGraph {
         }
     }
 }
+
+class Graph {
+    constructor(edgeDirection = Graph.DIRECTED) {
+        this.nodes = new Map ()
+        this.edgeDirection = edgeDirection
+    }
+
+    addVertex(key){
+        if (this.nodes.has(key)) {
+            return this.nodes.get(key)
+        } else {
+            const vertex = new Node(key)
+            this.nodes.set(key, vertex)
+            return vertex
+        }
+    }
+
+    addEdge (nodeX, nodeY){
+        const sourceNode = this.addVertex(nodeX)
+        const destinationNode = this.addVertex(nodeY)
+
+        sourceNode.addAdjacent(destinationNode)
+
+        if (this.edgeDirection === Graph.UNDIRECTED) {
+            destinationNode.addAdjacent(sourceNode)
+        }
+
+        return [sourceNode, destinationNode]
+    }
+
+}
+
+Graph.UNDIRECTED = Symbol ("directed graph")
+Graph.DIRECTED = Symbol ("undirected graph")
 
