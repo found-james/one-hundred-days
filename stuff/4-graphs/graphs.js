@@ -54,8 +54,9 @@ Graph.DIRECTED = Symbol ("undirected graph")
 
 const firstGraph = new Graph()
 
-firstGraph.addVertex("a")
-firstGraph.addVertex("b")
-firstGraph.addVertex("c")
+firstGraph.addEdge("a", "b")
+firstGraph.addEdge("b", "c")
+firstGraph.addEdge("c", "a")
 
-console.log(firstGraph)
+
+console.log(firstGraph.nodes)
