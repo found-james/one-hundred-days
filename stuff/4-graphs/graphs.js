@@ -52,3 +52,10 @@ class Graph {
 Graph.UNDIRECTED = Symbol ("directed graph")
 Graph.DIRECTED = Symbol ("undirected graph")
 
+const firstGraph = new Graph()
+
+firstGraph.addVertex("a")
+firstGraph.addVertex("b")
+firstGraph.addVertex("c")
+
+console.log(firstGraph)
