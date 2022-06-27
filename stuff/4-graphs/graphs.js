@@ -39,6 +39,10 @@ class Node {
             return node
         }
     }
+
+    getAdjacents() {
+        return this.adjacents
+    }
 }
 
 class Graph {
@@ -70,21 +74,39 @@ class Graph {
         return [sourceNode, destinationNode]
     }
 
+    *bfs(first) {
+        const visited = new Map ()
+        const visitList = new Queue ()
+    
+        visitList.add(first)
+    
+        while (!visitList.isEmpty()){
+            const node = visitList.remove()
+            if (node && !visited.has(node)){
+                yield node
+                visited.set(node)
+                node.getAdjacents().forEach( adj => visitList.add(adj))
+            }
+        }
+    }
+
 }
 
 Graph.UNDIRECTED = Symbol ("directed graph")
 Graph.DIRECTED = Symbol ("undirected graph")
 
-// const firstGraph = new Graph()
+const firstGraph = new Graph()
 
-// firstGraph.addEdge("a", "b")
-// firstGraph.addEdge("b", "c")
-// firstGraph.addEdge("c", "a")
+const [first] = firstGraph.addEdge("a", "b")
 
+firstGraph.addEdge("b", "c")
+firstGraph.addEdge("c", "a")
+
+bfsFromFirst = firstGraph.bfs(first)
+
+console.log(bfsFromFirst.next().value.value)
+console.log(bfsFromFirst.next().value.value)
+console.log(bfsFromFirst.next().value.value)
 
 // console.log(firstGraph.nodes)
 
-const testQ = new Queue ()
-testQ.add("a")
-console.log(testQ)
-console.log(testQ.isEmpty())
