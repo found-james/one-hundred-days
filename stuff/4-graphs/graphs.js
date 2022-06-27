@@ -1,3 +1,26 @@
+class Queue {
+    constructor (){
+        this.elements = {}
+        this.head = 0
+        this.tail = 0
+    }
+
+    add (value) {
+        this.elements[this.tail] = value
+        this.tail++
+    }
+
+    remove () {
+        const element = this.elements[this.head]
+        delete this.elements[this.head]
+        this.head++
+        return element
+    }
+
+    isEmpty(){
+        return !(this.tail - this.head)
+    }
+}
 class Node {
     constructor (value){
         this.value = value
@@ -52,11 +75,16 @@ class Graph {
 Graph.UNDIRECTED = Symbol ("directed graph")
 Graph.DIRECTED = Symbol ("undirected graph")
 
-const firstGraph = new Graph()
+// const firstGraph = new Graph()
 
-firstGraph.addEdge("a", "b")
-firstGraph.addEdge("b", "c")
-firstGraph.addEdge("c", "a")
+// firstGraph.addEdge("a", "b")
+// firstGraph.addEdge("b", "c")
+// firstGraph.addEdge("c", "a")
 
 
-console.log(firstGraph.nodes)
+// console.log(firstGraph.nodes)
+
+const testQ = new Queue ()
+testQ.add("a")
+console.log(testQ)
+console.log(testQ.isEmpty())
