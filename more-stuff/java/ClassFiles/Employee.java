@@ -1,6 +1,5 @@
 package ClassFiles;
-
-public class Employee {
+class Employee {
     String name;
     int age;
     String designation;
@@ -27,3 +26,16 @@ public class Employee {
 
 }
 
+class EmployeeTest {
+    public static void main(String args[]){
+        Employee empOne = new Employee("James");
+        Employee empTwo = new Employee("Mar");
+
+        empOne.empAge(26);
+        empTwo.empAge(21);
+
+        empOne.printEmployee();
+        empTwo.printEmployee();
+
+    }
+}
