@@ -3,9 +3,11 @@ package ClassFiles;
 public class Variables {
     public static void main (String[] args){
 
-        LocalVariable y = new LocalVariables("hello");
+        LocalVariable y = new LocalVariable ("hello");
+        y.leggo();
 
-        System.out.println(y + " this is an example of a local var because...");
+        SampleLocalVar z = new SampleLocalVar();
+        z.pupAge();
     }
 }
 
@@ -15,4 +17,18 @@ class LocalVariable {
     public LocalVariable (String localVar){
         this.x = localVar;
     }
+
+    public void leggo (){
+        System.out.println(x);
+    }
 }
+
+class SampleLocalVar {
+    public void pupAge(){
+        int age = 0;
+        age = age + 7;
+
+        System.out.println("puppy age is: " + age);
+    }
+}
+
