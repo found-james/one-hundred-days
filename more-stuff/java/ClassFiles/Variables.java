@@ -3,7 +3,7 @@ package ClassFiles;
 public class Variables {
     public static void main (String[] args){
 
-        LocalVariable y = new LocalVariable ("hello");
+        InstanceVariableUpdate y = new InstanceVariableUpdate ("hello");
         y.leggo();
 
         SampleLocalVar z = new SampleLocalVar();
@@ -11,10 +11,10 @@ public class Variables {
     }
 }
 
-class LocalVariable {
+class InstanceVariableUpdate {
     String x;
 
-    public LocalVariable (String localVar){
+    public InstanceVariableUpdate (String localVar){
         this.x = localVar;
     }
 
@@ -24,7 +24,7 @@ class LocalVariable {
 }
 
 class SampleLocalVar {
-    
+
     public void pupAge(){
         int age = 0;
         age = age + 7;
