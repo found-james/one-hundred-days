@@ -22,8 +22,8 @@ function isUnique (str) {
 
     for (let char of strArr){
         if (cache[char]){
-            isUnique = false
-            return isUnique
+            return isUnique = false
+            
         } else {
             cache[char] = true
         }
@@ -32,13 +32,27 @@ function isUnique (str) {
     return isUnique
 }
 
+function isUniqueStr (str) {
+    if (typeof str !== "string") throw new Error ("strings only")
 
+    const cache = {}
+
+    for (let i = 0; i < str.length -1; i++){
+        if (cache[str.charAt(i)]) {
+            return false
+        } else {
+            cache[str.charAt(i)] = true
+        }
+    }
+
+    return true
+}
 /* tests */
 
-console.log(isUnique("hello"))
-console.log(isUnique("goodbye"))
-console.log(isUnique("dos"))
-console.log(isUnique(2))
+console.log(isUniqueStr("hello"))
+console.log(isUniqueStr("goodbye"))
+console.log(isUniqueStr("dos"))
+// console.log(isUniqueStr(2))
 
 
 
