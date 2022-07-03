@@ -1,21 +1,18 @@
 import java.util.HashMap;
 
-class TestForUnique {
-    String testWord;
+public class IsUnique {
 
-    public TestForUnique (String x){
-        this.testWord = x;
-    }
-
-    public boolean isUnique (){
+    public static boolean uniquenessTest (String testWord){
         HashMap<Character, Boolean> cache = new HashMap<Character, Boolean>();
 
-        for (int i = 0; i < this.testWord.length(); i++){
-            char letter = this.testWord.charAt(i);
+        for (int i = 0; i < testWord.length(); i++){
+            char letter = testWord.charAt(i);
 
             if (cache.get(letter) == null){
                 cache.put(letter, true);
             } else if (cache.get(letter) == true){
+                System.out.println(cache);
+                System.out.println(letter);
                 return false;
             } else {
                 cache.put(letter, true);
@@ -23,13 +20,11 @@ class TestForUnique {
         }
 
         System.out.println(cache);
-
-
         return true;
     }
 
     public static void main (String [] args){
-        TestForUnique word = new TestForUnique("helo");
-        System.out.println(word.isUnique());
+        
+        System.out.println(uniquenessTest("hello"));
     }
 }
