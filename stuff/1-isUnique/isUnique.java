@@ -12,12 +12,14 @@ class TestForUnique {
 
         for (int i = 0; i < this.testWord.length(); i++){
             char letter = this.testWord.charAt(i);
-            cache.put(letter, true);
-            
-            if (cache.get(letter) == true){
-                return false;
-            } 
 
+            if (cache.get(letter) == null){
+                cache.put(letter, true);
+            } else if (cache.get(letter) == true){
+                return false;
+            } else {
+                cache.put(letter, true);
+            }
         }
 
         System.out.println(cache);
@@ -29,7 +31,7 @@ class TestForUnique {
 
 class Test {
     public static void main (String [] args){
-        TestForUnique word = new TestForUnique("hello");
+        TestForUnique word = new TestForUnique("helo");
         System.out.println(word.isUnique());
     }
 }
