@@ -27,9 +27,7 @@ class TestForUnique {
 
         return true;
     }
-}
 
-class Test {
     public static void main (String [] args){
         TestForUnique word = new TestForUnique("helo");
         System.out.println(word.isUnique());
