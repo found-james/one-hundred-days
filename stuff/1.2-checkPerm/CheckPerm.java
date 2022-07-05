@@ -1,3 +1,4 @@
+
 import java.util.HashMap;
 
 public class CheckPerm {
@@ -27,6 +28,14 @@ public class CheckPerm {
                 System.out.println(cacheTwo);
             }
         }
+
+        Object []cacheOneKeys = cacheOne.keySet().toArray();
+
+        for (int i=0; i< cacheOneKeys.length; i++) {
+            System.out.println( cacheOneKeys[i] );
+        }
+
+
         return true;
     }
     public static void main (String[]args){
