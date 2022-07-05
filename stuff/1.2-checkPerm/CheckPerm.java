@@ -1,5 +1,4 @@
 
-import java.util.Arrays;
 import java.util.HashMap;
 
 public class CheckPerm {
@@ -31,12 +30,18 @@ public class CheckPerm {
         }
 
         Object []cacheOneKeys = cacheOne.keySet().toArray();
+        // Object []cacheTwoKeys = cacheTwo.keySet().toArray();
+        // if (cacheOneKeys.length != cacheTwoKeys.length) return false;
 
-        System.out.println(Arrays.toString(cacheOneKeys));
+        for (Object i: cacheOneKeys){
+
+            if (cacheOne.get(i) != cacheTwo.get(i)) return false;
+        }
+
 
         return true;
     }
     public static void main (String[]args){
-        permutationCheck("hiii", "bii");
+        System.out.println(permutationCheck("hiii", "iih"));
     }
 }
