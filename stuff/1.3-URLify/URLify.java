@@ -1,4 +1,3 @@
-import java.util.Arrays;
 
 public class URLify {
 
@@ -15,8 +14,10 @@ public class URLify {
             } 
         }
 
-        System.out.println(Arrays.toString(strArr));
-        return x;
+        String urlReturn = String.join("", strArr);
+        System.out.println(urlReturn);
+
+        return urlReturn;
     }
 
     public static void main (String [] args){
