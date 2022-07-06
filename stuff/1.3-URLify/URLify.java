@@ -1,12 +1,18 @@
+
 public class URLify {
 
     public static String convert (String x){
 
-        // been reading stuff
+        String [] strArr = x.split("");
+        
+        for (String i: strArr){
+            System.out.println(i);
+        }
         return x;
     }
 
     public static void main (String [] args){
-
+        String x = "hello";
+        convert(x);
     }
 }
