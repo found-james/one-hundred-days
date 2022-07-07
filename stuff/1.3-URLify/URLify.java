@@ -6,7 +6,6 @@ public class URLify {
         String [] strArr = x.split("");
         
         for (int i = 0; i < strArr.length; i++){
-
         // System.out.println(i);
 
             if (strArr[i].isBlank()) {
@@ -20,8 +19,8 @@ public class URLify {
         return urlReturn;
     }
 
-    public static void main (String [] args){
-        String x = "hello you";
+    public static void main (String[]args){
+        String x = new String("hello you");
         convert(x);
     }
 }
