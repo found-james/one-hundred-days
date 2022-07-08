@@ -1,6 +1,6 @@
 import {useState} from 'react'
 
-function Form() {
+function Form(props) {
 
     const [formData, setFormData] = useState({
         searchTerm:"",
@@ -9,6 +9,7 @@ function Form() {
     
       const handleChange = (e) => {
         setFormData({ ...formData, error: "", [e.target.name]: e.target.value});
+        props.setWeather({});
       };
     
       const handleSubmit = (event) => {
@@ -17,7 +18,7 @@ function Form() {
         if (formData.searchTerm.length !== 5) {
         setFormData({ searchTerm: "", error: "not valid zipcode"});
         } else {
-          // apiCall
+          props.fetch();
         }
       };
     
