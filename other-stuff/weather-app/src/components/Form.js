@@ -2,6 +2,8 @@ import {useState} from 'react'
 
 function Form(props) {
 
+  const {setZipCode} = props
+
     const [formData, setFormData] = useState({
         zipCode:"",
         error:""
@@ -9,7 +11,7 @@ function Form(props) {
     
       const handleChange = (e) => {
         setFormData({ ...formData, error: "", [e.target.name]: e.target.value});
-        props.setWeather({});
+        setZipCode({});
       };
     
       const handleSubmit = (event) => {
@@ -18,7 +20,7 @@ function Form(props) {
         if (formData.zipCode.length !== 5) {
         setFormData({ zipCode: "", error: "not valid zipcode"});
         } else {
-          props.fetch(formData.zipCode)
+          setZipCode(formData.zipCode)
         }
       };
     
@@ -28,7 +30,7 @@ function Form(props) {
         <input type="text" placeholder="ZIP" name="zipCode" onChange={handleChange} value={formData.zipCode}/>
         <input type="submit" value="enter zip"/>
       </form>
-      <p>{formData.error}</p>q
+      <p>{formData.error}</p>
     </div>
   )
 }
