@@ -11,7 +11,7 @@ function Form(props) {
     
       const handleChange = (e) => {
         setFormData({ ...formData, error: "", [e.target.name]: e.target.value});
-        setZipCode({});
+        // setZipCode({});
       };
     
       const handleSubmit = (event) => {

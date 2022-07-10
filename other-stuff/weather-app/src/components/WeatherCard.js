@@ -4,9 +4,7 @@ function WeatherCard(props) {
     
     const {zipCode} = props
 
-    const [weather, setWeather] = useState({})
-
-    const {name, main} = weather
+    const [weather, setWeather] = useState(null)
 
     const getWeatherData = async (zipCode) => {
         try {
@@ -29,13 +27,13 @@ function WeatherCard(props) {
             {
                 weather && (
                     <Fragment>
-                        <p>{name}</p>
-                        <p>{main.temp}</p>
-                        <p>{main.feels_like}</p>
-                        <p>{main.temp_min}</p>
-                        <p>{main.temp_max}</p>
-                        <p>{main.pressure}</p>
-                        <p>{main.temp_min}</p>
+                        <p>{weather.name}</p>
+                        <p>{weather.main.temp}</p>
+                        <p>{weather.main.feels_like}</p>
+                        <p>{weather.main.temp_min}</p>
+                        <p>{weather.main.temp_max}</p>
+                        <p>{weather.main.pressure}</p>
+                        <p>{weather.main.temp_min}</p>
                     </Fragment>
                 )
             }
