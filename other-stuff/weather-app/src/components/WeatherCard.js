@@ -1,14 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 function WeatherCard(props) {
-const {weather} = props;
+    
+const {weather, main, name } = props
+
+
+// useEffect(() => {
+//     getWeatherData()
+// }, [weather])
 
 const callMade = () => {
     return (
-        <div>
-            <p>{weather.list[0] && weather.list[0].main.temp}</p>
-            <p>{}</p>
-            <p>{}</p>
+        <div style={{border: "1px solid black", height:"100px"}}>
+            <p>{weather[0].description}</p>
+            <p>{main.temp}</p>
+            <p>{name}</p>
     
         </div>
       )
@@ -17,13 +23,11 @@ const callMade = () => {
 const noCall = () => {
     return (
         <div>
-            <p>{}</p>
-            <p>{}</p>
-            <p>{}</p>
+            Weather APP
         </div>
       )
 }
-return weather.list ? callMade(): noCall();
+return weather && main && name ? callMade(): noCall();
   
 }
 

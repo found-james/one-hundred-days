@@ -3,7 +3,7 @@ import {useState} from 'react'
 function Form(props) {
 
     const [formData, setFormData] = useState({
-        searchTerm:"",
+        zipCode:"",
         error:""
       });
     
@@ -15,17 +15,17 @@ function Form(props) {
       const handleSubmit = (event) => {
         event.preventDefault();
     
-        if (formData.searchTerm.length !== 5) {
-        setFormData({ searchTerm: "", error: "not valid zipcode"});
+        if (formData.zipCode.length !== 5) {
+        setFormData({ zipCode: "", error: "not valid zipcode"});
         } else {
-          props.fetch();
+          props.fetch(formData.zipCode)
         }
       };
     
   return (
     <div>
         <form onSubmit={handleSubmit}>
-        <input type="text" name="searchTerm" onChange={handleChange} value={formData.searchTerm}/>
+        <input type="text" placeholder="ZIP" name="zipCode" onChange={handleChange} value={formData.zipCode}/>
         <input type="submit" value="enter zip"/>
       </form>
       <p>{formData.error}</p>
