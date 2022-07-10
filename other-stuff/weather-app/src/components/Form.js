@@ -28,7 +28,7 @@ function Form(props) {
         <input type="text" placeholder="ZIP" name="zipCode" onChange={handleChange} value={formData.zipCode}/>
         <input type="submit" value="enter zip"/>
       </form>
-      <p>{formData.error}</p>
+      <p>{formData.error}</p>q
     </div>
   )
 }
