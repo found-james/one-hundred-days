@@ -11,7 +11,7 @@ function WeatherCard(props) {
             const response = await apiCall(zipCode);
             const data = await response.json()
             setWeather(data)
-            
+
         } catch (err) {
             console.error(err)
         }
@@ -23,7 +23,7 @@ function WeatherCard(props) {
 
 
     return (
-        <div className={""}>
+        <div className={ weather ? "showCard" : "noShow"}>
             {
                 weather && (
                     <Fragment>
