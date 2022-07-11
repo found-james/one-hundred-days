@@ -1,20 +1,20 @@
 import React, { Fragment, useEffect, useState} from 'react'
+import {apiCall} from "../util/fetch"
 
 function WeatherCard(props) {
     
     const {zipCode} = props
-
     const [weather, setWeather] = useState(null)
 
     const getWeatherData = async (zipCode) => {
         try {
-            const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?zip=${zipCode},us&units=imperial&APPID=7f5bbd6dd05e3fdd62172d000f0b41ef`);
-            const data = await response.json();
-            console.log(data)
+            const response = await apiCall(zipCode);
+            const data = await response.json()
             setWeather(data)
-    } catch {
-
-    }
+            
+        } catch (err) {
+            console.error(err)
+        }
   }
 
     useEffect(() => {
@@ -23,7 +23,7 @@ function WeatherCard(props) {
 
 
     return (
-        <div style={{border: "1px solid black", height:"100px"}}>
+        <div className={""}>
             {
                 weather && (
                     <Fragment>
