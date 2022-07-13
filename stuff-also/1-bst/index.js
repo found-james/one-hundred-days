@@ -41,7 +41,7 @@ class BinarySearchTree {
     }
 
     insertNode (node, newNode){
-        console.log(newNode.data < node.data);
+        // console.log(newNode.data < node.data);
 
         if (newNode.data < node.data)
         {
@@ -49,7 +49,7 @@ class BinarySearchTree {
                 node.left = newNode;
             else
                 this.insertNode(node.left, newNode);
-                console.log(newNode.data < node.data)
+                // console.log(newNode.data < node.data)
         }
         else 
         {
@@ -64,6 +64,9 @@ class BinarySearchTree {
 const binaryTree = new BinarySearchTree();
 console.log(binaryTree);
 
-binaryTree.insert("hel")
-binaryTree.insert("hel")
+binaryTree.insert(1)
+binaryTree.insert(2)
+binaryTree.insert(3)
+binaryTree.insert(4)
+
 console.log(binaryTree)
